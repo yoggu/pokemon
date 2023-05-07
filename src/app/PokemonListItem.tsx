@@ -1,5 +1,5 @@
-import { Pokemon } from "pokedex-promise-v2";
-import { pokedex } from "@/lib/pokedex";
+import { Pokemon } from "pokemon";
+import { getPokemon } from "@/lib/pokeApi";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -10,20 +10,23 @@ interface PokemonListItemProps {
 export default async function PokemonListItem({
   pokemonName,
 }: PokemonListItemProps) {
-  const pokemon: Pokemon = await pokedex.getPokemonByName(pokemonName);
+  const pokemon: Pokemon = await getPokemon(pokemonName);
 
   return (
     <li>
-      <Link href={`/pokemon/${pokemon.id}`}>
-        <div className="flex ">
-          <h3 className="text-lg font-semibold">{pokemon.name}</h3>
+      <Link className="block w-fit" href={`/pokemon/${pokemon.name}`}>
+        <div className="flex items-center space-x-4">
           <Image
             alt={pokemon.name}
             src={pokemon.sprites.front_default ?? ""}
-            width={100}
-            height={100}
+            width={80}
+            height={80}
           />
+          <div className="space-y-2">
+            <h3 className="text-lg font-semibold">{pokemon.name}</h3>
+          </div>
         </div>
+        <div className="flex "></div>
       </Link>
     </li>
   );

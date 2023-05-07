@@ -1,10 +1,10 @@
-import Image from 'next/image'
-import PokemonList from './PokemonList'
+import PokemonList from "./PokemonList";
 
 export default function Home() {
   return (
-    <main>
+    <>
+      <h1 className="font-semibold text-4xl mb-6">Pokemon Index</h1>
       <PokemonList />
-    </main>
-  )
+    </>
+  );
 }
