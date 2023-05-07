@@ -16,12 +16,16 @@ export default async function PokemonListItem({
     <li>
       <Link className="block w-fit" href={`/pokemon/${pokemon.name}`}>
         <div className="flex items-center space-x-4">
-          <Image
-            alt={pokemon.name}
-            src={pokemon.sprites.front_default ?? ""}
-            width={80}
-            height={80}
-          />
+          <div className="h-20 w-20">
+            {pokemon?.sprites?.front_default && (
+              <Image
+                alt={pokemon.name}
+                src={pokemon.sprites.front_default}
+                width={80}
+                height={80}
+              />
+            )}
+          </div>
           <div className="space-y-2">
             <h3 className="text-lg font-semibold">{pokemon.name}</h3>
           </div>

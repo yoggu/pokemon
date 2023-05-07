@@ -11,12 +11,16 @@ export default async function PokemonDetail({ name }: { name: string }) {
         <CardTitle className="uppercase">{pokemon.name}</CardTitle>
       </CardHeader>
       <CardContent className="flex flex-col items-center w-full">
-        <Image
-          alt={pokemon.name}
-          src={pokemon.sprites.front_default ?? ""}
-          width={100}
-          height={100}
-        />
+        <div className="h-[100px] w-[100px]">
+          {pokemon?.sprites?.front_default && (
+            <Image
+              alt={pokemon.name}
+              src={pokemon.sprites.front_default}
+              width={100}
+              height={100}
+            />
+          )}
+        </div>
         <ul className="grid gap-3 grid-cols-2 mt-4 w-full">
           {pokemon.stats.map((stat) => (
             <li className="flex gap-1" key={stat.stat.name}>
