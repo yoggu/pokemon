@@ -26,7 +26,7 @@ export default async function PokemonListItem({
             <h3 className="text-lg font-semibold">{pokemon.name}</h3>
           </div>
         </div>
-        <div className="flex "></div>
+        <div className="flex"></div>
       </Link>
     </li>
   );
