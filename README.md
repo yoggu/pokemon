@@ -6,7 +6,7 @@ This is a [Next.js](https://nextjs.org/) project for playing around with RSC and
 ## Getting Started
 
 ```bash
-npm run install
+npm install
 ```
 
 ```bash
