@@ -1,6 +1,7 @@
 # Pokemon Index
 
 Find information about any Pokemon.
+
 This is a [Next.js](https://nextjs.org/) project for playing around with RSC and the /app directory.
 
 ## Getting Started
