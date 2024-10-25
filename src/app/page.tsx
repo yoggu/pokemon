@@ -1,11 +1,12 @@
 import PokemonList from "./PokemonList";
 import Search from "./Search";
 
-export default function PokemonListPage({
-  searchParams,
-}: {
-  searchParams: any;
-}) {
+export default async function PokemonListPage(
+  props: {
+    searchParams: Promise<any>;
+  }
+) {
+  const searchParams = await props.searchParams;
   return (
     <>
       <h1 className="font-semibold text-4xl mb-6">Pokemon Index</h1>
